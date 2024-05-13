@@ -36,5 +36,14 @@ pipeline{
             }
         }
 
+        stage("Continous Delivery"){
+            steps{
+                script {
+                    sh 'cp -r /home/ubuntu/.jenkins/workspace/SIELI-APP1/ /var/www/html/'
+                }
+            }
+
+        }
+
     }
 }
