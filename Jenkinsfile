@@ -9,11 +9,17 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/nelatmani/SIELI-CICD-Nabil.git'
             }
         }
+
         stage("Unit Test"){
 
             steps{
                 sh 'mvn test'
             }
         }
+
+        stage("Integration Test"){
+            steps{ sh 'mvn verify -DskipUnitTests'}
+        }
+
     }
 }
